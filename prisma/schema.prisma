@@ -21,12 +21,12 @@ model User {
 
   created_at DateTime @default(now())
 
-  chekIns ChekIn[]
+  checkIns CheckIn[]
 
   @@map("users")
 }
 
-model ChekIn {
+model CheckIn {
   id String @id @default(uuid())
 
   created_at DateTime @default(now())
@@ -55,7 +55,7 @@ model Gym {
 
   longitude Decimal
 
-  chekIns ChekIn[]
+  chekIns CheckIn[]
 
   @@map("gyms")
 }

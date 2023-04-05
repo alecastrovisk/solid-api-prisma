@@ -27,7 +27,7 @@ describe('Authenticate Use Case', () => {
     const usersRepository = new InMemoryUsersRepository()
     const sut = new AuthenticateUseCase(usersRepository)
 
-    expect(async () =>
+    await expect(async () =>
       sut.execute({
         email: 'user@email.com',
         password: '123456',
@@ -45,7 +45,7 @@ describe('Authenticate Use Case', () => {
       password_hash: await hash('123456', 6),
     })
 
-    expect(async () =>
+    await expect(async () =>
       sut.execute({
         email: 'user@email.com',
         password: '123455',
