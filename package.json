@@ -7,8 +7,10 @@
     "start:dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
     "build": "tsup src --out-dir build",
-    "test": "vitest run",
-    "test:watch": "vitest",
+    "test": "vitest run --dir src/use-cases",
+    "test:watch": "vitest -- dir src/use-cases",
+    "preteste2e": "cd prisma/vitest-environment-prisma && npm link",
+    "teste2e": "vitest run --dir src/http",
     "test:coverage": "vitest run --coverage"
   },
   "keywords": [],
