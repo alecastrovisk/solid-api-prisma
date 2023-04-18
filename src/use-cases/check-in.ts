@@ -54,7 +54,7 @@ export class CheckInUseCase {
       throw new MaxDistanteError()
     }
 
-    const checkInOnSameDay = await this.checkInsRepository.findUserByIdOnDate(
+    const checkInOnSameDay = await this.checkInsRepository.findByUserIdOnDate(
       userId,
       new Date(),
     )
